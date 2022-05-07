@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(96, 7, 197);
+        }
+        
+        * {
+            margin-bottom: 2px;
+            border-radius: 15px;
+            border-color: solid blue;
+            color: blue;
+        }
+        
+        #container {
+            display: inline-block;
+            text-align: center;
+            background-color: greenyellow;
+            margin: auto;
+            margin-top: 90px;
+        }
+        
+        button {
+            background-color: aquamarine;
+            width: 40px;
+            height: 40px;
+            font-size: 30px;
+            margin: 2px;
+        }
+        
+        button:hover {
+            color: red;
+            cursor: pointer;
+        }
+        
+        #display {
+            height: 50px;
+            width: 170px;
+            font-size: 25px;
+            margin-bottom: 10px;
+            border: 4px solid indigo;
+        }
+        
+        #clear {
+            background: rgb(226, 56, 56);
+        }
+        
+        #m {
+            margin: 12px;
+        }
+        
+        .mathbtn {
+            background-color: #333;
+            color: aliceblue;
+        }
+        
+        .hide {
+            width: 50px;
+            margin-top: 15px;
+            color: whitesmoke;
+            background-color: rgb(54, 0, 124);
+        }
+        
+        #name {
+            font-size: 10px;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            margin-left: 60px;
+            color: red;
+        }
+        
+        #head {
+            margin-bottom: 0px;
+            font-size: 30px;
+        }
+        
+        .div {
+            background-color: black;
+            border-radius: 0px;
+        }
+        
+        .nav {
+            width: 150px;
+            height: 30px;
+            font-size: 20px;
+            border-radius: 0px;
+        }
+        
+        #search {
+            width: 150px;
+            height: 30px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <nav>
+            <button class="nav">HOME</button>
+            <button class="nav" onclick="gallery()">GALLERY</button>
+            <button class="nav" onclick="rotateme()">PHOTOS</button>
+            <button class="nav">CONTACTS</button>
+
+            <button class="nav">SERVICES</button>
+            <button class="nav">PRIVACY</button>
+            <button class="nav">HELP</button>
+            <input type="search" id="search" placeholder="search">
+        </nav>
+    </div>
+    <center>
+        <div id="container">
+            <h2 id="head">Calculator</h2>
+            <p id="name">@Arjun Chaudhary</p>
+            <input id="display" readonly>
+            <br>
+            <div id="m">
+
+                <button onclick="seven()">7</button>
+                <button onclick="eight()">8</button>
+                <button onclick="nine()">9</button>
+                <button class="mathbtn" onclick="add()">+</button>
+                <br>
+
+                <button onclick="four()">4</button>
+                <button onclick="five()">5</button>
+                <button onclick="six()">6</button>
+                <button class="mathbtn" onclick="sub()">-</button>
+                <br>
+
+                <button onclick="one()">1</button>
+                <button onclick="two()">2</button>
+                <button onclick="three()">3</button>
+                <button class="mathbtn" onclick="mult()">*</button>
+                <br>
+
+                <button id="clear" onclick="c()">c</button>
+                <button onclick="zero()">0</button>
+                <button onclick="equal()">=</button>
+                <button class="mathbtn" onclick="div()">/</button>
+                <br>
+
+                <button class="hide" onclick="hide()">==</button>
+                <button class="hide" onclick="kal()">||</button>
+            </div>
+        </div>
+    </center>
+
+    <script>
+        function one() {
+            display.value += "1";
+        }
+
+        function two() {
+            display.value += "2";
+        }
+
+        function three() {
+            display.value += "3";
+        }
+
+        function four() {
+            display.value += "4";
+        }
+
+        function five() {
+            display.value += "5";
+        }
+
+        function six() {
+            display.value += "6";
+        }
+
+        function seven() {
+            display.value += "7";
+        }
+
+        function eight() {
+            display.value += "8";
+        }
+
+        function nine() {
+            display.value += "9";
+        }
+
+        function zero() {
+            display.value += "0";
+        }
+
+        function add() {
+            display.value += "+";
+        }
+
+        function equal() {
+            display.value = eval(display.value);
+        }
+
+        function c() {
+            display.value = "";
+        }
+
+        function sub() {
+            display.value += "-";
+        }
+
+        function mult() {
+            display.value += "*";
+        }
+
+        function div() {
+            display.value += "/";
+        }
+
+        function rotateme() {
+            open("rotate.html");
+            location.reload();
+        }
+
+        function gallery() {
+            open("photo2.html");
+            location.reload();
+        }
+
+        function hide() {
+            var pic = eval(display.value);
+            document.getElementById("display").value = pic;
+            setInterval(() => {
+
+                switch (pic) {
+
+                    case 1:
+                        open("bikashchhetri.jpg");
+                        break;
+
+                    case 2:
+                        open("ashok_sapkota.jpg");
+                        break;
+
+                    case 3:
+                        open("durga.jpg");
+                        break;
+
+                    case 4:
+                        open("baburam-.jpg");
+                        break;
+
+                    case 5:
+                        open("prakash.jpg");
+                        break;
+
+                    case 6:
+                        open("niru.jpg");
+                        break;
+
+                    case 7:
+                        open("kaladhar.jpg");
+                        break;
+
+                    case 8:
+                        open("sushil.jpg");
+                        break;
+
+                    case 9:
+                        open("prinsu.jpg");
+                        break;
+
+                    case 10:
+                        open("arjun.jpg");
+                        break;
+
+                    case 11:
+                        open("rahul.jpg");
+                        break;
+
+                    case 12:
+                        open("surendar.jpg");
+                        break;
+
+                    case 13:
+                        open("krishna.jpg");
+                        break;
+
+                    case 14:
+                        open("guru.jpg");
+                        break;
+
+                    case 15:
+                        open("mohit.jpg");
+                        break;
+
+                    case 16:
+                        open("akshay.jpg");
+                        break;
+
+                    case 17:
+                        open("akash.jpg");
+                        break;
+
+                    case 18:
+                        open("bikashtiwari.jpg");
+                        break;
+
+                    case 19:
+                        open("ramesh.jpg");
+                        break;
+
+                    case 20:
+                        open("gorakh.jpg");
+                        break;
+
+                    case 21:
+                        open("ravindar.jpg");
+                        break;
+
+                    case 22:
+                        open("ravi jaiswal.jpg");
+                        break;
+
+                    case 23:
+                        open("ravi gupta.jpg");
+                        break;
+
+                    case 24:
+                        open("jogindar.jpg");
+                        break;
+
+                    case 25:
+                        open("somnath.jpg");
+                        break;
+
+                    case 26:
+                        open("ashish.jpg");
+                        break;
+
+                    case 27:
+                        open("ramji.jpg");
+                        break;
+
+                    case 28:
+                        open("samirpaudel.jpg");
+                        break;
+
+                    case 29:
+                        open("samundra.jpg");
+                        break;
+
+                    case 30:
+                        open("ishan.jpg");
+                        break;
+
+                    case 31:
+                        open("rotate.html");
+                        break;
+
+                    case 999:
+                        open("index.jpg");
+                        break;
+
+                    case 1803:
+                        open("photo.html");
+                        break;
+
+                }
+                location.reload();
+
+            }, 100)
+        }
+
+        //code for random pic generator
+
+        function kal() {
+            var random = Math.floor(Math.random() * 30);
+            //console.log(random);
+            setInterval(() => {
+
+                switch (random) {
+
+                    case 1:
+                        open("bikashchhetri.jpg");
+                        break;
+
+                    case 2:
+                        open("ashok_sapkota.jpg");
+                        break;
+
+                    case 3:
+                        open("durga.jpg");
+                        break;
+
+                    case 4:
+                        open("baburam-.jpg");
+                        break;
+
+                    case 5:
+                        open("prakash.jpg");
+                        break;
+
+                    case 6:
+                        open("niru.jpg");
+                        break;
+
+                    case 7:
+                        open("kaladhar.jpg");
+                        break;
+
+                    case 8:
+                        open("sushil.jpg");
+                        break;
+
+                    case 9:
+                        open("prinsu.jpg");
+                        break;
+
+                    case 10:
+                        open("arjun.jpg");
+                        break;
+
+                    case 11:
+                        open("rahul.jpg");
+                        break;
+
+                    case 12:
+                        open("surendar.jpg");
+                        break;
+
+                    case 13:
+                        open("krishna.jpg");
+                        break;
+
+                    case 14:
+                        open("guru.jpg");
+                        break;
+
+                    case 15:
+                        open("mohit.jpg");
+                        break;
+
+                    case 16:
+                        open("akshay.jpg");
+                        break;
+
+                    case 17:
+                        open("akash.jpg");
+                        break;
+
+                    case 18:
+                        open("bikashtiwari.jpg");
+                        break;
+
+                    case 19:
+                        open("ramesh.jpg");
+                        break;
+
+                    case 20:
+                        open("gorakh.jpg");
+                        break;
+
+                    case 21:
+                        open("ravindar.jpg");
+                        break;
+
+                    case 22:
+                        open("ravi jaiswal.jpg");
+                        break;
+
+                    case 23:
+                        open("ravi gupta.jpg");
+                        break;
+
+                    case 24:
+                        open("jogindar.jpg");
+                        break;
+
+                    case 25:
+                        open("somnath.jpg");
+                        break;
+
+                    case 26:
+                        open("ashish.jpg");
+                        break;
+
+                    case 27:
+                        open("ramji.jpg");
+                        break;
+
+                    case 28:
+                        open("samirpaudel.jpg");
+                        break;
+
+                    case 29:
+                        open("samundra.jpg");
+                        break;
+
+                    case 30:
+                        open("ishan.jpg");
+                        break;
+                }
+                location.reload();
+
+            }, 100)
+        }
+    </script>
+
+</body>
+
+</html>
